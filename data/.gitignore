@@ -1,0 +1,6 @@
+*.sav
+*.bdb
+*.ban
+/logs
+/player_saves
+last_git_commit_hash.txt
