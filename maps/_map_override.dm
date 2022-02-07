@@ -70,5 +70,9 @@
 		#undef MAP_OVERRIDE
 		#include "line.dm"
 		#define MAP_OVERRIDE 13
+	#elif MAP_OVERRIDE == 15
+		#undef MAP_OVERRIDE
+		#include "endohstation.dm"
+		#define MAP_OVERRIDE 15
 	#endif
 #endif
