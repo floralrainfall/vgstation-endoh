@@ -1313,6 +1313,7 @@ var/default_colour_matrix = list(1,0,0,0,\
 #define LANGUAGE_DEATHSQUAD "Deathsquad"
 #define LANGUAGE_CLOWN "Clown"
 #define LANGUAGE_GRUE "Grue"
+#define LANGUAGE_LATEX "Goo"
 
 //#define SAY_DEBUG 1
 #ifdef SAY_DEBUG
