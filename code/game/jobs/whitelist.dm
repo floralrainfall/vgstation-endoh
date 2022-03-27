@@ -55,7 +55,7 @@ var/global/list/alien_whitelist = list()
 		return 1
 
 	if(!alien_whitelist)
-		return 0
+		return 1
 
 	// Species is in whitelist
 	if("*" in alien_whitelist[species])

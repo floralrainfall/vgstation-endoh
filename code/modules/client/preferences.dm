@@ -52,6 +52,7 @@ var/global/list/special_roles = list(
 	ROLE_MINOR		= 1,
 	ROLE_PRISONER	= 1,
 	ROLE_GRUE		= 1,
+	ROLE_GOO		= 1,
 )
 
 var/list/nonantag_roles = list(

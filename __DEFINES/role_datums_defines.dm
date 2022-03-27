@@ -22,6 +22,7 @@
 #define SPIDERCLAN "spider clan"
 #define XENOMORPH_HIVE "alien hivemind"
 #define JUSTICE_DEPARTMENT "justice department"
+#define GOO_GANG "goo creature"
 //-------
 #define HIVEMIND "changeling hivemind"
 #define WIZFEDERATION "wizard federation"
@@ -81,6 +82,7 @@
 #define TAG_MIME "tag mime"
 #define JUDGE "judge"
 #define GRUE "grue"
+#define GOO_CREATURE "goo creature"
 
 #define GREET_DEFAULT		"default"
 #define GREET_ROUNDSTART	"roundstart"

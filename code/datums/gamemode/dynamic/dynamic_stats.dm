@@ -169,6 +169,9 @@
 		powers.Add(P.type)
 	blood_total = V.blood_total
 
+/datum/stat/role/goo
+	var/transforms = 0
+
 /datum/stat/role/revolutionary
 // future proofing don't mind me
 
