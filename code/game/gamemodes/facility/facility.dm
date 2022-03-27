@@ -8,7 +8,7 @@
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/slime
 	attack_verb = "glomps"
 	tacklePower = 35
-	flags = NO_PAIN | NO_BREATHE | ELECTRIC_HEAL
+	flags = IS_WHITELISTED | NO_PAIN | NO_BREATHE | ELECTRIC_HEAL
 	anatomy_flags = NO_SKIN | NO_BLOOD | NO_BONES | NO_STRUCTURE | NO_BONES | MULTICOLOR
 	icobase = 'icons/mob/goo.dmi'
 	blood_color = "#e0dede"
