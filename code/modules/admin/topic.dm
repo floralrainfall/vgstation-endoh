@@ -766,6 +766,9 @@
 				new_mob = core.overmind
 				if(delmob)
 					qdel(M)
+			if("goo")
+				new_mob = M.change_mob_type( /mob/living/carbon/human , null, null, delmob )
+				new_mob.Gooize()
 			if("ai")
 				new_mob = M.AIize(spawn_here = 1, del_mob = delmob)
 //		to_chat(world, "Made a [new_mob] [usr ? "usr still exists" : "usr does not exist"]")

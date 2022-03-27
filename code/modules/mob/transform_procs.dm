@@ -271,6 +271,16 @@
 	to_chat(new_corgi, "<B>You are now a Corgi. Yap Yap!</B>")
 	return new_corgi
 
+/mob/proc/Gooize()
+	if(!Premorph())
+		return
+	var/mob/living/carbon/human/new_human = new /mob/living/carbon/human(loc, delay_ready_dna=TRUE)
+	new_human.gender = NEUTER
+	new_human.set_species("Goo")
+	new_human.generate_name()
+	Postmorph(new_human)
+	return new_human
+
 /mob/proc/Martianize()
 	if(!Premorph())
 		return

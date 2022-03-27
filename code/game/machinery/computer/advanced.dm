@@ -7,9 +7,9 @@
 	use_power = 1
 	idle_power_usage = 300
 	active_power_usage = 300
-	var/obj/item/weapon/circuitboard/circuit = null //if circuit==null, computer can't disassembly
-	var/processing = 0
-	var/empproof = FALSE // For plasma glass builds
+	circuit = null //if circuit==null, computer can't disassembly
+	processing = 0
+	empproof = FALSE // For plasma glass builds
 	machine_flags = EMAGGABLE | SCREWTOGGLE | WRENCHMOVE | FIXED2WORK | MULTITOOL_MENU | SHUTTLEWRENCH
 	pass_flags_self = PASSMACHINE
 	use_auto_lights = 1

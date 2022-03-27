@@ -1,18 +1,22 @@
 // FACILITY GAMEMODE
 // Really bad
 
+/datum/gamemode/facility
+	name = "Facility"
+	factions_allowed = list(/datum/faction/goo)
+	//Im gay
 
 // goo creatures are effectively slime creatures with the power of transforming others
 /datum/species/goo_creature
-	name = "Goo Creature"
+	name = "Goo"
 	meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/slime
 	attack_verb = "glomps"
 	tacklePower = 35
-	flags = IS_WHITELISTED | NO_PAIN | NO_BREATHE | ELECTRIC_HEAL
+	flags = NO_PAIN | NO_BREATHE | ELECTRIC_HEAL
 	anatomy_flags = NO_SKIN | NO_BLOOD | NO_BONES | NO_STRUCTURE | NO_BONES | MULTICOLOR
 	icobase = 'icons/mob/goo.dmi'
 	blood_color = "#e0dede"
-	flesh_color = "#e0dede"
+	flesh_color = "#d6cdcd"
 	gender = NEUTER
 
 	tox_mod = 2
@@ -21,13 +25,24 @@
 
 	has_mutant_race = 0
 
-	spells = list(/spell/regen_limbs,/spell/goo_transform)
-	default_language =  LANGUAGE_LATEX
+	spells = list(/spell/targeted/goo_transform)
+	default_language = LANGUAGE_LATEX
 	known_languages = list(LANGUAGE_LATEX, LANGUAGE_SLIME)
 
 	has_organ = list(
 		"brain" =    /datum/organ/internal/brain/slime_core,
 	)
+
+/datum/language/latex
+	name = LANGUAGE_LATEX
+	desc = "Strange blorbles."
+	key = "9"
+	colour = "solcom"
+	speech_verb = "blorbles"
+	ask_verb = "blarbles"
+	exclaim_verb = "blerbles"
+	flags = RESTRICTED
+	syllables = list("...blorble...","...blarble...","...blerble...","...Poison.ogg...")
 
 /mob/living/goo_pile //serves as the corpse of goo people
 	name = "puddle of goo"
@@ -98,14 +113,3 @@
 				to_chat(user, "<span class='notice'>You place \the [O] into \the [src].</span>")
 				O.stabilized = TRUE
 				O.loc = null
-
-/datum/language/latex
-	name = LANGUAGE_LATEX
-	desc = "Strange blorbles."
-	key = "9"
-	colour = "solcom"
-	speech_verb = "blorbles"
-	ask_verb = "blarbles"
-	exclaim_verb = "blerbles"
-	flags = RESTRICTED
-	syllables = list("...blorble...","...blarble...","...blerble...","...Poison.ogg...")
