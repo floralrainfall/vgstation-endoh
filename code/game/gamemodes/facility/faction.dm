@@ -5,13 +5,12 @@
 	initial_role = GOO_CREATURE
 	late_role = GOO_CREATURE
 	desc = "Blorbley people."
-	logo_state = "xeno-logo"
+	logo_state = "latex-logo"
 	initroletype = /datum/role/goo
 	roletype = /datum/role/goo
 	playlist = "endgame"
 	default_admin_voice = "Latex Hivemind"
 	admin_voice_style = "alien"
-	var/squad_sent = FALSE
 	var/announceWhen = 0
 
 /datum/faction/goo/OnPostSetup()
@@ -22,6 +21,15 @@
 /datum/faction/goo/process()
 	if(world.time >= announceWhen && stage < FACTION_ACTIVE)
 		stage(FACTION_ACTIVE)
+/datum/command_alert/goocreature
+	name = "Unidentified Transformative Lifesigns Alert"
+	alert_title = "改变是有史以来最好的游戏 Alert"
+	alert = 'sound/AI/aliens.ogg'
+
+/datum/command_alert/goocreature/announce()
+	message = "Unidentified transformative lifesigns detected coming aboard [station_name()]. Secure any exterior access, including ducting and ventilation.<br><br>荣耀归于中共!"
+
+	..()
 
 /datum/faction/goo/stage(var/stage)
 	..()
@@ -67,7 +75,7 @@
 	special_role = GOO_CREATURE
 	required_pref = ROLE_GOO
 	wikiroute = ROLE_GOO
-	logo_state = "xeno-logo"
+	logo_state = "latex-logo"
 	default_admin_voice = "Latex Hivemind"
 	admin_voice_style = "alien"
 	var/transforms = 0
@@ -78,10 +86,11 @@
 	if(!greeting)
 		return
 
+	var/icon/logo = icon('icons/logos.dmi', logo_state)
 	switch(greeting)
 		if(GREET_CUSTOM)
-			to_chat(antag.current, "<span class='danger'>[custom]</span>")
+			to_chat(antag.current, "<img src='data:image/png;base64,[icon2base64(logo)]' style='position: relative; top: 10;'/> <span class='danger'>[custom]</span>")
 		else
-			to_chat(antag.current, "<span class='danger'>You are a goo creature! <br>There are precious carbons around here, and you think your brand of goo is the best!</span>")
+			to_chat(antag.current, "<img src='data:image/png;base64,[icon2base64(logo)]' style='position: relative; top: 10;'/> <span class='danger'>You are a goo creature! <br>There are precious carbons around here, and you think your brand of goo is the best!</span>")
 			to_chat(antag.current, "<span class='bold'>Transform others.</span>")
 			to_chat(antag.current, "<span class='bold'>Prevent other creatures from succeeding.</span>")
